@@ -56,7 +56,7 @@
 	width: 20%;
 	background-color: #393f50;
 	text-align: center;
-	height: 100vh;
+	height: 100%;
 	position: fixed;
 	display: flex;
 	flex-direction: column;

@@ -1,0 +1,19 @@
+Programmation:
+    - nom: HTML
+      niveau: 80
+    - nom: CSS
+      niveau: 75
+    - nom: PHP
+      niveau: 55
+Langues:
+    - nom: Français
+      niveau: 65
+    - nom: Anglais
+      niveau: 80
+    - nom: Allemand
+      niveau: 20
+Certification:
+    - nom: Pix
+      niveau: 644
+    - nom: MaxPix
+      niveau: 768 

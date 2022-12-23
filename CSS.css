@@ -137,4 +137,14 @@
 	color: #393f50;
 	vertical-align: center;
 	padding-top: 1%;
+
+}
+
+	.progress {
+	height: 60vh;
+	width: 75%;
+	background-color: #393F50;
+	color: #bcaa8a;
+	margin-top: 15vh;
+	margin-left: 12.5%;
 }

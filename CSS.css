@@ -125,7 +125,7 @@
 }
 
 	.emptyspace{
-	height: 40vh;
+	height: 30vh;
 
 }
 
@@ -141,10 +141,13 @@
 }
 
 	.progress {
-	height: 40vh;
+	height: 60vh;
 	width: 75%;
 	background-color: #393F50;
 	color: #bcaa8a;
 	margin-top: 15vh;
 	margin-left: 12.5%;
+	border-style: inset;
+	border-radius: 10px;
+	border-color: #000000;
 }

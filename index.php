@@ -39,7 +39,7 @@
 			
 				<div class="exercice_display">
 
-					<a class="page_sous_title_exo2" id="index"> Acceuil </a>
+					<a class="page_sous_title_exo2" id="#index"> Acceuil </a>
 
 						<div class="text_border">
 
@@ -87,8 +87,8 @@
 							foreach ($data as $domaine=> $tbComp) {
 								echo '<h1>'.$domaine.'</h1>';
 								foreach ($tbComp as $Comp) {
-									echo '<p>'.$Comp['nom'].' : ';
-									echo $Comp['niveau'].'</p>';
+									echo '<h2>'.$Comp['nom'].' : ';
+									echo $Comp['niveau'].'</h2>';
 								}
 							}
 							?>
@@ -108,11 +108,14 @@
 							foreach ($data as $domaine=> $tbComp) {
 								echo '<h1>'.$domaine.'</h1>';
 								foreach ($tbComp as $Comp) {
-									echo '<p>'.$Comp['nom'].' : ';
-									echo $Comp['niveau'].'</p>';
+									echo '<h2>'.$Comp['nom'].' : ';
+									echo $Comp['niveau'].'</h2>';
 								}
 							}
 							?>
+
+							<a href="CV_Matheo_Bruno.pdf"  class="BTNmenu">CV</a>
+
 
 						</div>
 
@@ -129,11 +132,13 @@
 							foreach ($data as $domaine=> $tbComp) {
 								echo '<h1>'.$domaine.'</h1>';
 								foreach ($tbComp as $Comp) {
-									echo '<p>'.$Comp['nom'].' : ';
-									echo $Comp['niveau'].'</p>';
+									echo '<h2>'.$Comp['nom'].' : ';
+									echo $Comp['niveau'].'</h2>';
 								}
 							}
 							?>
+
+								<a href="CV_Matheo_Bruno.pdf" class="BTNmenu">CV</a>
 
 						</div>
 
@@ -219,9 +224,6 @@ if (isset($_POST['Email'])) {
         'X-Mailer: PHP/' . phpversion();
     @mail($email_to, $email_subject, $email_message, $headers);
 ?>
-
-    <!-- INCLUDE YOUR SUCCESS MESSAGE BELOW -->
-
     Message envoyé
 
 <?php

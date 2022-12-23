@@ -19,7 +19,7 @@
 			
 			<div class="menu">
 				
-			<center><img src="icon.png" width="50%" style="margin-top: 75px; margin-bottom: 50px;";></center>
+			<center><img src="icon.png" width="50%" style="margin-bottom: 50px;";></center>
 				
 				<a href="#index" class="BTNmenu">Accueil</a>
 				
@@ -104,7 +104,7 @@
 						<div class="progress">
 
 							<?php
-							$data=yaml_parse_file("Skills.yaml");
+							$data=yaml_parse_file("History.yaml");
 							foreach ($data as $domaine=> $tbComp) {
 								echo '<h1>'.$domaine.'</h1>';
 								foreach ($tbComp as $Comp) {
@@ -125,7 +125,7 @@
 						<div class="progress">
 
 							<?php
-							$data=yaml_parse_file("Skills.yaml");
+							$data=yaml_parse_file("Formation.yaml");
 							foreach ($data as $domaine=> $tbComp) {
 								echo '<h1>'.$domaine.'</h1>';
 								foreach ($tbComp as $Comp) {
@@ -142,6 +142,94 @@
 						</div>
 
 					<a id="contact" class="page_sous_title_exo2">Contact</a>
+
+					<div>
+
+					    <form id="fcf-form-id" class="fcf-form-class" method="post" action="index.php#contact">
+            			<label for="Name" class="fcf-label">Ton nom</label>
+            			<div class="fcf-input-group">
+  		              	<input type="text" id="Name" name="Name" class="fcf-form-control" required>
+			            </div>
+     					<div class="fcf-form-group">
+      			     	<label for="Email" class="fcf-label">Ton addresse Mail</label>
+    			        <div class="fcf-input-group">
+      		            <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+        			    </div>
+				        <div class="fcf-form-group">
+       			 	    <label for="Message" class="fcf-label">Ton message</label>
+     			        <div class="fcf-input-group">
+ 		                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+ 			            </div>
+   				        </div>
+				        <div class="fcf-form-group">
+      			        <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send</button>
+   				        </div>
+
+<?php
+if (isset($_POST['Email'])) {
+
+    // EDIT THE FOLLOWING TWO LINES:
+    $email_to = "bruno.matheo61@gmail.com";
+    $email_subject = "site";
+
+    // validation expected data exists
+    if (
+        !isset($_POST['Name']) ||
+        !isset($_POST['Email']) ||
+        !isset($_POST['Message'])
+    ) {
+        problem('Erreur.');
+    }
+
+    $name = $_POST['Name']; // required
+    $email = $_POST['Email']; // required
+    $message = $_POST['Message']; // required
+
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+    if (!preg_match($email_exp, $email)) {
+        $error_message .= 'adresse invalide.<br>';
+    }
+
+    $string_exp = "/^[A-Za-z .'-]+$/";
+
+    if (!preg_match($string_exp, $name)) {
+        $error_message .= 'Nom invalide.<br>';
+    }
+
+    if (strlen($message) < 2) {
+        $error_message .= 'Message invalide.<br>';
+    }
+
+    $email_message = "Form details below.\n\n";
+
+    function clean_string($string)
+    {
+        $bad = array("content-type", "bcc:", "to:", "cc:", "href");
+        return str_replace($bad, "", $string);
+    }
+    $email_message .= "Name: " . clean_string($name) . "\n";
+    $email_message .= "Email: " . clean_string($email) . "\n";
+    $email_message .= "Message: " . clean_string($message) . "\n";
+
+    // create email headers
+    $headers = 'From: ' . $email . "\r\n" .
+        'Reply-To: ' . $email . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    @mail($email_to, $email_subject, $email_message, $headers);
+?>
+
+    <!-- INCLUDE YOUR SUCCESS MESSAGE BELOW -->
+
+    Message envoyé
+
+<?php
+}
+?>
+
+
+        			</div>
 
 				</div>
 			</div>

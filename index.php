@@ -39,7 +39,7 @@
 			
 				<div class="exercice_display">
 
-					<a class="page_sous_title_exo2" id="#index"> Acceuil </a>
+					<a class="page_sous_title_exo2" id="index"> Acceuil </a>
 
 						<div class="text_border">
 
